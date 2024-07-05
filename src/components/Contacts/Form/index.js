@@ -20,7 +20,7 @@ function From({ addContact, contacts }) {
             return false;
         }
         
-        addContact([...contacts, form]);
+        addContact([...contacts,form] );
 
         
     };

@@ -12,7 +12,7 @@ function Contacts() {
     return (
         <div>
             <List contacts={contacts} />
-            <From addContact={addContact} />
+            <From addContact={addContact} contacts={contacts}  />
         </div>
     );
 }
