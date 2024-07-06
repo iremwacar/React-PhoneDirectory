@@ -11,8 +11,8 @@
   /* Input alanları */
   input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -33,10 +33,11 @@
   .list > li {
     background-color: antiquewhite;
     padding: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
+    align-items: center; /* İçerikleri dikey olarak hizalar */
   }
   
   /* Butonlar */
@@ -55,9 +56,32 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease; /* Düğme üzerine gelince geçiş efekti */
   }
   
   .btn > button:hover {
     background-color: #45a049;
+  }
+  
+  /* Düzenle ve Sil düğmeleri için özel stiller */
+  .edit-btn {
+    background-color: rgb(9, 7, 121); /* Koyu mavi */
+  }
+  
+  .edit-btn:hover {
+    background-color: #3a3372; /* Koyu mavinin koyu tonu */
+  }
+  
+  .delete-btn {
+    background-color: red; /* Kırmızı */
+  }
+  
+  .delete-btn:hover {
+    background-color: #d63031; /* Kırmızının koyu tonu */
+  }
+  
+  /* Düzenle ve Sil düğmeleri için metin rengi */
+  .edit-btn, .delete-btn {
+    color: white; /* Beyaz */
   }
   

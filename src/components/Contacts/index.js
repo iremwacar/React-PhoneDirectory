@@ -28,7 +28,11 @@ function Contacts() {
     setContacts(number);
   }
 
-  
+  const updateNumber = (index, updatedNumber) => {
+    const updatedContacts = [...contacts];
+    updatedContacts[index].phoneNumber = updatedNumber;
+    setContacts(updatedContacts);
+  };
 
 
 
@@ -39,7 +43,7 @@ function Contacts() {
   return (
     <div className='container'>
         <h1>Phone Directory</h1>
-      <List contacts={contacts} deleteNumber={deleteNumber} />
+      <List contacts={contacts} deleteNumber={deleteNumber} updateNumber={updateNumber} />
       <Form addContact={addContact} contacts={contacts} />
     </div>
   );
