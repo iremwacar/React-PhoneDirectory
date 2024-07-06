@@ -1,0 +1,63 @@
+/* Genel container */
+.container {
+    width: 400px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 20px auto; /* Sayfa ortasına almak için */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input alanları */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Liste ve liste öğeleri */
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .list {
+    margin-top: 15px;
+  }
+  
+  .list > li {
+    background-color: antiquewhite;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Butonlar */
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .btn > button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn > button:hover {
+    background-color: #45a049;
+  }
+  

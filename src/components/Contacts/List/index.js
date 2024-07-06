@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function List({ contacts }) {
+function List({ contacts,deleteNumber }) {
   const [filterText,setFilterText]=useState('');
 
   const filtered = contacts.filter((item)=>{
@@ -17,11 +17,17 @@ function List({ contacts }) {
       value={filterText}
       onChange={(e)=>setFilterText(e.target.value)}/>
 
-      <ul>
+      <ul className='list'>
         {filtered.map((contact, i) => (
-          <li key={i}>{contact.fullname}</li>
+          <li key={i}>
+            <span>{contact.fullname}</span>
+            <span>{contact.phoneNumber}</span>
+            <button className='delete-btn'
+            onClick={()=> deleteNumber(i)}>X</button>
+          </li>
         ))}
       </ul>
+      <p>Total contacts:{filtered.length}</p>
     </div>
   );
 }
