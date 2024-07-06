@@ -1,53 +1,51 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
+const initialFormValues = { fullname: "", phoneNumber: "" };
 
-const initialFormValues = { fullname:"", phoneNumber:""};
-function From({ addContact, contacts }) {
-    const [form, setForm] = useState(initialFormValues);
+function Form({ addContact, contacts }) {
+  const [form, setForm] = useState(initialFormValues);
 
-    useEffect(()=> {
-        setForm(initialFormValues);
-    },[contacts])
+  useEffect(() => {
+    setForm(initialFormValues);
+  }, [contacts]);
 
-    const onChangeInput = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+  const onChangeInput = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-        if (form.fullname === '' || form.phoneNumber === '') {
-            return false;
-        }
-        
-        addContact([...contacts,form] );
+    if (form.fullname === '' || form.phoneNumber === '') {
+      return false;
+    }
 
-        
-    };
+    addContact(form);
+  };
 
-    return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <input
-                    name="fullname"
-                    placeholder="Full Name"
-                    value={form.fullname}
-                    onChange={onChangeInput}
-                />
-            </div>
-            <div>
-                <input
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    value={form.phoneNumber}
-                    onChange={onChangeInput}
-                />
-            </div>
-            <div>
-                <button type="submit">Add</button>
-            </div>
-        </form>
-    );
+  return (
+    <form onSubmit={onSubmit}>
+      <div>
+        <input
+          name="fullname"
+          placeholder="Full Name"
+          value={form.fullname}
+          onChange={onChangeInput}
+        />
+      </div>
+      <div>
+        <input
+          name="phoneNumber"
+          placeholder="Phone Number"
+          value={form.phoneNumber}
+          onChange={onChangeInput}
+        />
+      </div>
+      <div>
+        <button type="submit">Add</button>
+      </div>
+    </form>
+  );
 }
 
-export default From;
+export default Form;
